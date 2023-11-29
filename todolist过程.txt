@@ -1,0 +1,20 @@
+//渲染
+引入headers、contents、footers三个模块 ，input输入框双向绑定headers模块的state中，按回车触发点击事件，获取input输入框里的值，通过 this.$store.commit定义一个事件，把input输入框里的值传到contents模块中，使用find判重，push末尾添加到一个数组中，通过$store.state.contents.item让数组渲染到首页。
+//删除
+点击删除事件，获取对应的id或者索引值，通过this.$store.commit定义一个事件，把对应的id或者索引值传过去，在contents模块中，使用splice数组方法对数组进行删除。
+//删除选中
+点击删除选中事件，通过this.$store.commit定义一个事件，在contents模块中，在定义的事件中使用filter过滤，把复选框绑定的值==false的筛选出来，把原数组重新赋值让他等于过滤后返回的新数组。
+//全部数量
+引入getters，通过计算属性getters，起一个名字（不能和data的值重复）， return返回数组的总长度。
+//已完成数量
+通过计算属性getters，使用过滤，return返回数组中复选框绑定的值==false的值的长度。
+//反选
+通过计算属性getters，使用every方法，判断数组中的值是否都符合条件，return返回出去。
+//全选
+在反选的基础上，使用vuex高级语法糖...mapGetters(["反选属性名"]),获取属性，然后在首页使用 computed计算属性get返回（this.反选属性值），set(value)内,foreach循环数组让复选框的值都等于修改后的那个值。
+
+
+
+
+
+123456y7u8io
